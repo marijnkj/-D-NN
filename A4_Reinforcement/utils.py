@@ -10,7 +10,8 @@ def getpolicy(Q):
     operations. It's possible to implement this in one line of code.
     """
 
-    P = None
+    P = np.argmax(Q, axis=2)
+    # P = np.array(list(map(lambda state_max_row: [A[state_max_ind] for state_max_ind in state_max_row], np.argmax(Q, axis=2))))
 
     return P
 
@@ -22,7 +23,7 @@ def getvalue(Q):
     operations. It's possible to implement this in one line of code.
     """
     
-    V = None
+    V = np.max(Q, axis=2)
 
     return V
 
